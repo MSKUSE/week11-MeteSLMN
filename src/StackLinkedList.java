@@ -9,7 +9,11 @@ public class StackLinkedList implements Stack{
         top.setNext(previousTop);
     }
     @Override
-    public Object pop() {
+    public Object pop() throws myemptystackexception {
+        if (top==null){
+            throw new myemptystackexception("Stack is emity.");
+        }
+
         Object tempData = top.getData();
         top = top.getNext();
         return tempData;
